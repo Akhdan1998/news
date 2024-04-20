@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      // Get.to(newsDetails(berita: dataList.length,));
+                      Get.to(newsDetails(dataList: dataList, author: dataList[index].author.toString(), index: index,));
                     },
                     child: Container(
                       // padding: EdgeInsets.only(left: 15, right: 15),
