@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/route_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:news/model.dart';
@@ -7,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 class newsDetails extends StatefulWidget {
   News berita;
 
-  newsDetails(this.berita);
+  newsDetails({required this.berita});
 
   @override
   State<newsDetails> createState() => _newsDetailsState();
@@ -23,8 +24,8 @@ class _newsDetailsState extends State<newsDetails> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime haha = DateFormat('yyyy-MM-ddTHH:mm:ssZ')
-        .parse(widget.berita.publishedAt.toString());
+    DateTime haha = DateFormat('yyyy-MM-ddTHH:mm:ssZ').parse(widget.berita.publishedAt.toString());
+    // DateTime haha = DateFormat('yyyy-MM-ddTHH:mm:ssZ').parse(dataList);
     String date = DateFormat('dd MMMM yyy').format(haha);
     String time = DateFormat('HH:mm:ss').format(haha);
     return Scaffold(
